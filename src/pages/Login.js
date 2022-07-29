@@ -52,7 +52,6 @@ render() {
   const { email, password, disableButton } = this.state;
   return (
     <div>
-      {/* <Redirect to="/carteira" /> */}
       <input
         type="email"
         name="email"
