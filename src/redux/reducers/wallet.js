@@ -15,6 +15,12 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       currencies: action.currencies,
     };
+  case 'SAVE_WALLET':
+    return {
+      ...state,
+      expenses: [...state.expenses, action.expenses],
+
+    };
   default:
     return state;
   }
