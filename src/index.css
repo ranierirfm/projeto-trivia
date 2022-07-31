@@ -38,7 +38,7 @@
 
   --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.2) , 0 4px 6px -2px rgba(0, 0, 0, 0.08);
 
-  --borderRadius: 0.25rem;
+  --borderRadius: 1rem;
 
   --max-width: 1120px;
 
@@ -80,12 +80,14 @@ h1 , h2 , h3 , h4 , h5 {
   line-height: 1.3;
   margin: 0;
   margin-bottom: 1.38rem;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
+  
 }
 
 h1 {
   font-size: 3.052rem;
   margin-top: 0;
+  text-align: center;
 }
 
 h2 {
@@ -113,7 +115,17 @@ small , .text_small {
   object-fit: cover;
   width: 100%;
 }
-
+#titulo_tabela {
+  padding: 2rem 2.5rem;
+  background-color: #b6e7d5;
+  text-align: center;
+  border-radius: var(--borderRadius);
+}
+#tittle {
+  background-color:  #2fc18c;
+  color: #e2e8f0;
+  border-radius: var(--borderRadius);
+}
 button {
   background: var(--accent);
   border: transparent;
@@ -150,6 +162,23 @@ form {
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
 }
+header{
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-1);
+  /* padding: 2rem 2.5rem; */
+  background-color: #b6e7d5;
+  text-align: center;
+}
+table {
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--grey-200);
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-1);
+  padding: 2rem 2.5rem;
+  
+}
 
 input , textarea , select {
   background: var(--grey-50);
@@ -159,6 +188,7 @@ input , textarea , select {
   padding: 0.7rem 0.75rem;
   width: 100%;
 }
+
 
 .container {
   margin: 0 auto;
@@ -181,3 +211,28 @@ input , textarea , select {
   background: var(--green-light);
   color: var(--green-dark);
 }
+
+/* ...................................................................................................... */
+
+#login {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 100vh;
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  /* width:280px; */
+
+  background-color: #b6e7d5;
+  
+
+
+  
+
+}
+

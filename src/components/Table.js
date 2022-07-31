@@ -4,46 +4,53 @@ export default class Table extends Component {
   render() {
     return (
       <div>
-        Table
-        <table>
-          <tr>
-            <th>Descrição</th>
-          </tr>
-          <tr>
-            <th>Tag</th>
-          </tr>
-          <tr>
-            <th>
-              Método de pagamento
-            </th>
-          </tr>
-          <tr>
-            <th>Valor</th>
-          </tr>
-          <tr>
-            <th>Moeda</th>
-          </tr>
-          <tr>
-            <th>
-              Câmbio utilizado
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Valor convertido
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Moeda de conversão
-            </th>
-          </tr>
-          <tr>
-            <th>
-              Editar/Excluir
-            </th>
-          </tr>
+        <h4 id="titulo_tabela">Lista de dispesas:</h4>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Descrição</th>
 
+              <th>Tag</th>
+
+              <th>
+                Método de pagamento
+              </th>
+
+              <th>Valor</th>
+
+              <th>Moeda</th>
+
+              <th>
+                Câmbio utilizado
+              </th>
+
+              <th>
+                Valor convertido
+              </th>
+
+              <th>
+                Moeda de conversão
+              </th>
+
+              <th>
+                Editar/Excluir
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+              <td>conteúdo</td>
+            </tr>
+
+          </tbody>
         </table>
       </div>
     );

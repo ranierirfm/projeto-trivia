@@ -51,33 +51,37 @@ verifiPassword=() => {
 render() {
   const { email, password, disableButton } = this.state;
   return (
-    <div>
-      <input
-        type="email"
-        name="email"
-        data-testid="email-input"
-        placeholder="E-mail"
-        value={ email }
-        onChange={ (event) => this.updateFormData(event.target) }
-      />
-      <input
-        type="password"
-        name="password"
-        data-testid="password-input"
-        value={ password }
-        placeholder="Senha"
-        onChange={ (event) => this.updateFormData(event.target) }
 
-      />
-      <button
-        type="button"
-        onClick={ this.signUser }
-        disabled={ disableButton }
-      >
-        Entrar
+    <div id="login">
 
-      </button>
+      <form>
+        <h3>Login</h3>
+        <input
+          type="email"
+          name="email"
+          data-testid="email-input"
+          placeholder="E-mail"
+          value={ email }
+          onChange={ (event) => this.updateFormData(event.target) }
+        />
+        <input
+          type="password"
+          name="password"
+          data-testid="password-input"
+          value={ password }
+          placeholder="Senha"
+          onChange={ (event) => this.updateFormData(event.target) }
 
+        />
+        <button
+          type="button"
+          onClick={ this.signUser }
+          disabled={ disableButton }
+        >
+          Entrar
+
+        </button>
+      </form>
     </div>
   );
 }

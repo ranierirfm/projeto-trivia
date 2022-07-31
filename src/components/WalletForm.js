@@ -47,11 +47,12 @@ class WalletForm extends Component {
     // console.log(currencies);
     return (
       <div>
-        Dispesas:
         <form>
+          <h4>Registre aqui sua dispesa:</h4>
           <label htmlFor="value-input">
             <input
               value={ value }
+              placeholder="Valor:"
               name="value"
               type="number"
               id="value-input"
@@ -62,6 +63,7 @@ class WalletForm extends Component {
           <label htmlFor="description-input">
             <input
               value={ description }
+              placeholder="Descrição:"
               name="description"
               type="Area-text"
               id="description-inputt"

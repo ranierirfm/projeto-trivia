@@ -3,19 +3,34 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 class Header extends React.Component {
+  sumAllValues = () => {
+    const { expenses } = this.props;
+    const sum = expenses.reduce((acc, expense) => expense.value
+      * expense.exchangeRates[expense.currency].ask + acc, 0);
+    return sum.toFixed(2);
+  };
+
   render() {
     const { email, expenses } = this.props;
-    // console.log(Object.values(expenses));
-    console.log(expenses);
-
+    console.log(expenses.length);
     return (
-      <div>
+      <header>
         <h3 data-testid="email-field">
           {email}
         </h3>
-        <h3 data-testid="total-field">0</h3>
-        <h3 data-testid="header-currency-field">BRL</h3>
-      </div>
+        <h4>Soma total:</h4>
+        <h3 data-testid="total-field">
+          {
+
+            expenses.length === 0 ? '0.00' : this.sumAllValues()
+
+          }
+
+        </h3>
+        <div>
+          <p data-testid="header-currency-field">BRL</p>
+        </div>
+      </header>
     );
   }
 }
