@@ -28,6 +28,11 @@ export const updateExpenses = (expenseData) => ({
   expenses: expenseData,
 });
 
+export const removeExpense = (expense) => ({
+  type: 'REMOVE_EXPENSE',
+  expenses: expense,
+});
+
 export function fetchCurriences() {
   return async (dispatch) => {
     dispatch(requestCurriences());

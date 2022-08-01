@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { removeExpense } from '../redux/actions';
 
 class Table extends Component {
+  // remove = () => {
+  //   const { expenses } = this.props;
+
+  // }
+
   render() {
-    const { expenses } = this.props;
+    const { expenses, remove } = this.props;
     return (
       <div>
         <h4 id="titulo_tabela">Lista de dispesas:</h4>
@@ -44,16 +50,19 @@ class Table extends Component {
 
             {
               expenses.map((expense) => (
-                <tr key="expense">
+                <tr key={ expense.id }>
                   <td>{expense.description}</td>
                   <td>{expense.tag}</td>
                   <td>{expense.method}</td>
                   <td>{Number(expense.value).toFixed(2)}</td>
                   <td>{expense.exchangeRates[expense.currency].name}</td>
                   <td>
+
                     {Number(expense.exchangeRates[expense.currency].ask).toFixed(2)}
+
                   </td>
                   <td>
+
                     {
                       Number(expense.value
                         * expense.exchangeRates[expense.currency].ask).toFixed(2)
@@ -73,7 +82,7 @@ class Table extends Component {
                       id="Excluir"
                       type="button"
                       data-testid="delete-btn"
-                      onClick=""
+                      onClick={ () => remove(expense) }
                     >
                       Excluir
 
@@ -97,6 +106,12 @@ const mapStateToProps = (store) => ({
 Table.propTypes = {
 
   expenses: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, null)(Table);
+const mapDispatchToProps = (dispatch) => ({
+  remove: (expense) => dispatch(removeExpense(expense)),
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);
