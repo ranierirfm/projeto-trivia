@@ -20,6 +20,7 @@ class Header extends React.Component {
         </h3>
         <h4>Soma total:</h4>
         <h3 data-testid="total-field">
+
           {
 
             expenses.length === 0 ? '0.00' : this.sumAllValues()

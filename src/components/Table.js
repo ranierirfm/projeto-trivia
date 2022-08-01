@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Table extends Component {
+class Table extends Component {
   render() {
+    const { expenses } = this.props;
     return (
       <div>
         <h4 id="titulo_tabela">Lista de dispesas:</h4>
@@ -38,17 +41,47 @@ export default class Table extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-              <td>conteúdo</td>
-            </tr>
+
+            {
+              expenses.map((expense) => (
+                <tr key="expense">
+                  <td>{expense.description}</td>
+                  <td>{expense.tag}</td>
+                  <td>{expense.method}</td>
+                  <td>{Number(expense.value).toFixed(2)}</td>
+                  <td>{expense.exchangeRates[expense.currency].name}</td>
+                  <td>
+                    {Number(expense.exchangeRates[expense.currency].ask).toFixed(2)}
+                  </td>
+                  <td>
+                    {
+                      Number(expense.value
+                        * expense.exchangeRates[expense.currency].ask).toFixed(2)
+                    }
+
+                  </td>
+                  <td>Real</td>
+                  <td>
+                    <button
+                      type="button"
+                      data-testid="edit-btn"
+                    >
+                      Editar
+
+                    </button>
+                    <button
+                      id="Excluir"
+                      type="button"
+                      data-testid="delete-btn"
+                      onClick=""
+                    >
+                      Excluir
+
+                    </button>
+                  </td>
+                </tr>
+              ))
+            }
 
           </tbody>
         </table>
@@ -56,3 +89,14 @@ export default class Table extends Component {
     );
   }
 }
+
+const mapStateToProps = (store) => ({
+  expenses: store.wallet.expenses,
+});
+
+Table.propTypes = {
+
+  expenses: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, null)(Table);

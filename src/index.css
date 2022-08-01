@@ -127,6 +127,7 @@ small , .text_small {
   border-radius: var(--borderRadius);
 }
 button {
+
   background: var(--accent);
   border: transparent;
   border-radius: var(--borderRadius);
@@ -142,6 +143,12 @@ button {
 
 }
 
+#Excluir {
+  background:  #c14e59;
+  margin-top: 0.3rem;
+  padding: 0.375rem 0.45rem;
+  
+}
 button:hover {
   box-shadow: var(--shadow-2);
   filter: brightness(110%);
