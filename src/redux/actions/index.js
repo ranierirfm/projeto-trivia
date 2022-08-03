@@ -76,9 +76,7 @@ export const editAction = (expense) => async (dispatch, getState) => {
   StoreExpenses[getState().wallet.idToEdit] = nowExpense;
   console.log(StoreExpenses);
 
-  // if (expenseOrig.id === expenses.id) {
   dispatch(editExpenses(StoreExpenses));
-  // }
 };
 
 // export const myThunk = () => async (dispatch, getState) => {

@@ -41,17 +41,6 @@ class WalletForm extends Component {
     });
   };
 
-  // editExpensesStore = () => {
-  //   const { getExpenses } = this.props;
-  //   getExpenses(this.state);
-  //   this.setState({
-  //     value: '',
-  //     description: '',
-  //     method: '',
-  //     tag: '',
-  //   });
-  // };
-
   editExpensesStore = () => {
     const { editExpense, id } = this.props;
     this.setState({

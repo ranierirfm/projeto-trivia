@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editExpense, removeExpense } from '../redux/actions';
-import './table.css';
+// import './table.css';
 
 class Table extends Component {
   render() {
