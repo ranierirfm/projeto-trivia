@@ -33,6 +33,15 @@ export const removeExpense = (expense) => ({
   expenses: expense,
 });
 
+export const editExpense = (expense) => ({
+  type: 'EDIT',
+  expenses: expense,
+});
+export const editExpenses = (expense) => ({
+  type: 'EDIT_EXPENSE',
+  expenses: expense,
+});
+
 export function fetchCurriences() {
   return async (dispatch) => {
     dispatch(requestCurriences());
@@ -56,6 +65,20 @@ export const walletAction = (expenses) => async (dispatch, getState) => {
   expenseData.exchangeRates = await getCurriences();
   console.log(expenseData);
   dispatch(updateExpenses(expenseData));
+};
+
+export const editAction = (expense) => async (dispatch, getState) => {
+  const StoreExpenses = getState().wallet.expenses;
+  const nowExpense = expense;
+  nowExpense.id = getState().wallet.idToEdit;
+  nowExpense.exchangeRates = StoreExpenses[getState().wallet.idToEdit].exchangeRates;
+
+  StoreExpenses[getState().wallet.idToEdit] = nowExpense;
+  console.log(StoreExpenses);
+
+  // if (expenseOrig.id === expenses.id) {
+  dispatch(editExpenses(StoreExpenses));
+  // }
 };
 
 // export const myThunk = () => async (dispatch, getState) => {

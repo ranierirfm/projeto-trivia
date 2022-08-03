@@ -1,0 +1,35 @@
+th {
+    display: table-cell;
+    /* vertical-align: inherit; */
+    font-weight: bold;
+    text-align: -internal-center;
+    background-color: #2fc18c;
+    color: aliceblue;
+    font-size:large;
+    padding-left: 10px;
+  padding-right: 10px;
+  }
+  table {
+    text-align: center;
+    /* text-indent: initial; */
+    border-spacing: 2px;
+    border-color: grey;
+    border-collapse: collapse;
+    width: 100%;
+    display: table;
+}
+td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* button #excluir {
+
+  border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    background:  #c14e59;
+} */
+
+  
