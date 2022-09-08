@@ -1,10 +1,9 @@
 # 🚧 README em construção 🚧
 
-# Modelo README projetos
 Aplicação de carteira digital feita com React e Redux.
-> [Acessar página do projeto](https://xxxxxxxxxx.github.io/Projeto-xxxxxxxxxx/)
+<!-- > [Acessar página do projeto](https://xxxxxxxxxx.github.io/Projeto-xxxxxxxxxx/) -->
 
-## 💻 Projeto
+## 💻 Projeto Wallet
 
 Carteira digital de controle de gastos com conversor de moedas feita em React e utilizando Redux como ferramenta de manipulação de estado.
 
